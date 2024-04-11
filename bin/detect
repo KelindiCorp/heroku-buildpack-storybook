@@ -1,0 +1,9 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+if [ -d $BUILD_DIR/public/docs/storybook ]; then
+  echo "Storybook installed"
+  exit 0
+else
+  exit 1
+fi

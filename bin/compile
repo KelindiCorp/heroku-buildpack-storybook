@@ -1,0 +1,8 @@
+#!/bin/sh
+
+BUILD_DIR=$1
+cd $BUILD_DIR
+
+echo "Building Storybook..."
+bundle exec rake view_component_storybook:write_stories_json
+yarn storybook:build
