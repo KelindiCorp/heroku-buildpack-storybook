@@ -5,6 +5,11 @@ if [ -n "$BUILDPACK_DEBUG" ]; then
   set -x
 fi
 
+if [ $RAILS_ENV != "staging" ]; then
+  echo "Skipping Storybook build for non-staging environment"
+  exit 0
+fi
+
 # parse and derive params
 BUILD_DIR=$1
 cd $BUILD_DIR
